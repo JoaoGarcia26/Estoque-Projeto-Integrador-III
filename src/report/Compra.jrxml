@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.19.1.final using JasperReports Library version 6.19.1-867c00bf88cd4d784d404379d6c05e1b419e8a4c  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Compra" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="4eedbb89-b4f6-4469-9ab6-f642a1688cf7">
+	<property name="template.engine" value="tabular_template"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="ControleEstoque"/>
+	<style name="Title" forecolor="#FFFFFF" fontName="Times New Roman" fontSize="50" isBold="false"/>
+	<style name="SubTitle" forecolor="#CCCCCC" fontName="Times New Roman" fontSize="18" isBold="false"/>
+	<style name="Column header" forecolor="#666666" fontName="Times New Roman" fontSize="14" isBold="true"/>
+	<style name="Row" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style mode="Opaque" backcolor="#F0EFEF"/>
+		</conditionalStyle>
+	</style>
+	<style name="Table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+			<topPen lineWidth="1.0" lineColor="#000000"/>
+			<leftPen lineWidth="1.0" lineColor="#000000"/>
+			<bottomPen lineWidth="1.0" lineColor="#000000"/>
+			<rightPen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="tableDataset" uuid="ea55dc56-904f-46c9-9869-66e4789a2b86">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="ControleEstoque"/>
+		<queryString language="SQL">
+			<![CDATA[select * from controleestoque.compra]]>
+		</queryString>
+		<field name="id" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.name" value="id"/>
+			<property name="com.jaspersoft.studio.field.label" value="id"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="compra"/>
+		</field>
+		<field name="nomeFornecedor" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="nomeFornecedor"/>
+			<property name="com.jaspersoft.studio.field.label" value="nomeFornecedor"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="compra"/>
+		</field>
+		<field name="nomeProduto" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="nomeProduto"/>
+			<property name="com.jaspersoft.studio.field.label" value="nomeProduto"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="compra"/>
+		</field>
+		<field name="qtd" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.name" value="qtd"/>
+			<property name="com.jaspersoft.studio.field.label" value="qtd"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="compra"/>
+		</field>
+		<field name="data" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="data"/>
+			<property name="com.jaspersoft.studio.field.label" value="data"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="compra"/>
+		</field>
+		<field name="valorTotal" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="valorTotal"/>
+			<property name="com.jaspersoft.studio.field.label" value="valorTotal"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="compra"/>
+		</field>
+		<group name="id">
+			<groupExpression><![CDATA[$F{id}]]></groupExpression>
+		</group>
+		<group name="nomeFornecedor">
+			<groupExpression><![CDATA[$F{nomeFornecedor}]]></groupExpression>
+		</group>
+		<group name="nomeProduto">
+			<groupExpression><![CDATA[$F{nomeProduto}]]></groupExpression>
+		</group>
+		<group name="qtd">
+			<groupExpression><![CDATA[$F{qtd}]]></groupExpression>
+		</group>
+		<group name="data">
+			<groupExpression><![CDATA[$F{data}]]></groupExpression>
+		</group>
+		<group name="valorTotal">
+			<groupExpression><![CDATA[$F{valorTotal}]]></groupExpression>
+		</group>
+	</subDataset>
+	<queryString>
+		<![CDATA[SELECT id,
+	`nomeFornecedor`,
+	`nomeProduto`,
+	qtd,
+	data,
+	`valorTotal`
+FROM controleestoque.compra]]>
+	</queryString>
+	<field name="nomeFornecedor" class="java.lang.String"/>
+	<field name="nomeProduto" class="java.lang.String"/>
+	<field name="qtd" class="java.lang.String"/>
+	<field name="data" class="java.lang.String"/>
+	<field name="valorTotal" class="java.lang.String"/>
+	<title>
+		<band height="187" splitType="Stretch">
+			<frame>
+				<reportElement positionType="Float" mode="Opaque" x="190" y="0" width="365" height="130" backcolor="#E78200" uuid="17682764-df02-4019-b2d7-8e75ca15e0ac"/>
+				<staticText>
+					<reportElement style="Title" x="0" y="0" width="365" height="130" backcolor="#3A3C42" uuid="11ac3f46-a024-4077-8b0f-d70faad0f27d"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="SansSerif" size="58" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Estoque+]]></text>
+				</staticText>
+				<frame>
+					<reportElement mode="Opaque" x="0" y="130" width="365" height="32" forecolor="#000000" backcolor="#3A3C42" uuid="7366c5da-9f57-4203-9be5-2771f0645269"/>
+					<textField pattern="d MMM , yyyy">
+						<reportElement x="70" y="0" width="285" height="29" forecolor="#FFFFFF" uuid="690688fa-96ea-4941-8308-e9f0c094fe99"/>
+						<textElement textAlignment="Right" verticalAlignment="Middle">
+							<font size="14"/>
+						</textElement>
+						<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+					</textField>
+				</frame>
+			</frame>
+		</band>
+	</title>
+	<pageFooter>
+		<band height="25" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="480" splitType="Stretch">
+			<property name="local_mesure_unitheight" value="pixel"/>
+			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+			<frame>
+				<reportElement mode="Opaque" x="0" y="450" width="555" height="24" forecolor="#D0B48E" backcolor="#000000" uuid="2857bbc0-51d5-4ed7-b542-cefaeb4bdc36"/>
+				<textField evaluationTime="Report">
+					<reportElement style="Column header" x="513" y="0" width="40" height="20" forecolor="#FFFFFF" uuid="d3ed7bc6-6ef6-4e83-9691-406b1a607921"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Column header" x="433" y="0" width="80" height="20" forecolor="#FFFFFF" uuid="87edde92-ff3c-4380-9545-f2a0dfda283a"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Página "+$V{PAGE_NUMBER}+" de"]]></textFieldExpression>
+				</textField>
+				<textField pattern="EEEEE dd MMMMM yyyy">
+					<reportElement style="Column header" x="2" y="1" width="197" height="20" forecolor="#FFFFFF" uuid="09939741-c641-46e1-9582-e814af1b519c"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</summary>
+</jasperReport>
